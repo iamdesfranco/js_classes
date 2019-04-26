@@ -1,18 +1,25 @@
+const display = document.getElementsByClassName('display');
+
 class Car {
-    constructor(doors, engine, color) {
+    constructor(name, doors, engine, color) {
         this.doors = doors;
         this.engine = engine;
         this.color = color;
+        this.name = name;
     }
 
-    carStats() {
-        return `This car has ${this.doors} doors, a ${this.engine} engine and a beautiful ${this.color} color!`;
+    carStat() {
+        console.log( `This is a ${this.name} with ${this.doors} doors, a ${this.engine} engine and in the color of ${this.color}` );
     }
 }
 
-const cx5 = new Car( 4, 'V6', 'grey');
+var fortuner = new Car('Fortuner', 4, '3L', 'grey')
 
-console.log(cx5);
-console.log(cx5.carStats());
+display.innerHTML = `<h1>${fortuner.name}</h1>`
+
+console.log(fortuner);
+console.log(fortuner.carStat());
+
+
 
 
